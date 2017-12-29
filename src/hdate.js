@@ -58,7 +58,7 @@ function HDate(day, month, year) {
 		case 1:
 			if (typeof day == 'undefined') {
 				return new HDate();
-			} else if (day instanceof Date) {
+			} else if (Object.prototype.toString.call(day) === '[object Date]') {
 				// we were passed a Gregorian date, so convert it
 				var d = abs2hebrew(greg.greg2abs(day));
 				/*if (d.sunset() < day) {
